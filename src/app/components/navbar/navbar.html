@@ -1,1 +1,44 @@
-<p>navbar works!</p>
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-emerald-800">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <!-- Left: brand -->
+    <a routerLink="/" class="text-white font-bold tracking-tight"> Emmanuel Cruzat</a>
+
+    <!-- Center -->
+    <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-white/80">
+      <button (click)="goToSection('about')" class="hover:text-white">About</button>
+      <button (click)="goToSection('experience')" class="hover:text-white">Experience</button>
+      <button (click)="goToSection('projects')" class="hover:text-white">Projects</button>
+      <button (click)="goToSection('skills')" class="hover:text-white">Skills</button>
+    </nav>
+
+    <!-- Right -->
+    <div class="hidden md:flex items-center gap-3">
+      <button
+        (click)="goToSection('contact')"
+        class="rounded-full bg-white px-6 py-3 text-sm hover:shadow-xl transition duration-300 hover:shadow-emerald-200/20 hover:ring-1 hover:ring-emerald-100/40"
+      >
+        Contact Me
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  @if (open) {
+  <div class="border-t border-white/10 bg-neutral-950/95 md:hidden">
+    <div class="mx-auto max-w-6xl px-6 py-4 space-y-3 text-white/90">
+      <button (click)="goToSection('about')" class="block w-full text-left">About</button>
+      <button (click)="goToSection('experience')" class="block w-full text-left">Experience</button>
+      <button (click)="goToSection('projects')" class="block w-full text-left">Projects</button>
+      <button (click)="goToSection('skills')" class="block w-full text-left">Skills</button>
+      <a (click)="close()" routerLink="/leadership" class="block">Leadership</a>
+
+      <button
+        (click)="goToSection('contact')"
+        class="mt-2 w-full rounded-xl bg-emerald-800 px-4 py-2 font-bold text-white"
+      >
+        Contact Me
+      </button>
+    </div>
+  </div>
+  }
+</header>
