@@ -1,0 +1,58 @@
+<section class="py-24 bg-neutral-50">
+  <div class="mx-auto max-w-6xl px-6">
+    <h2 class="text-4xl font-bold">Skills</h2>
+    <p class="mt-2 text-neutral-600">Tools and areas I have experience with.</p>
+
+    <div class="mt-12 grid gap-8 md:grid-cols-3">
+      <!-- Languages -->
+      <div>
+        <h3 class="mb-3 font-semibold text-lg">Languages</h3>
+        <ul class="space-y-1">
+          @for (s of skills.languages; track s) {
+          <li class="text-neutral-700">{{ s }}</li>
+          }
+        </ul>
+      </div>
+
+      <!-- Frameworks -->
+      <div>
+        <h3 class="mb-3 font-semibold text-lg">Frameworks</h3>
+        <ul class="space-y-1">
+          @for (s of skills.frameworks; track s) {
+          <li class="text-neutral-700">{{ s }}</li>
+          }
+        </ul>
+      </div>
+
+      <!-- Databases -->
+      <div>
+        <h3 class="mb-3 font-semibold text-lg">Databases</h3>
+        <ul class="space-y-1">
+          @for (s of skills.databases; track s) {
+          <li class="text-neutral-700">{{ s }}</li>
+          }
+        </ul>
+      </div>
+
+      <!-- Systems -->
+      <div>
+        <h3 class="mb-3 font-semibold text-lg">Systems</h3>
+        <ul class="space-y-1">
+          @for (s of skills.systems; track s) {
+          <li class="text-neutral-700">{{ s }}</li>
+          }
+        </ul>
+      </div>
+
+      <!-- Security -->
+      <div>
+        <h3 class="mb-3 font-semibold text-lg">Security</h3>
+        <ul class="space-y-1">
+          @for (s of skills.security; track s) {
+          <li class="text-neutral-700">{{ s }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
