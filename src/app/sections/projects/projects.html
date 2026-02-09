@@ -9,50 +9,51 @@
     </div>
     <div class="mt-12 grid gap-8 md:grid-cols-2">
       @for (p of projects; track p.title) {
-        <div
-          revealOnScroll
-          class="reveal-up rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm hover:shadow-xl transition duration-300 hover:shadow-emerald-200/20 hover:ring-1 hover:ring-emerald-100/40"
-        >
-          <h3 class="text-xl font-bold text-neutral-900">{{ p.title }}</h3>
-          <p class="mt-2 text-sm text-neutral-600">
-            {{ p.desc }}
-          </p>
-          <div class="mt-4 flex flex-wrap gap-2">
-            @for (t of p.tech; track t) {
-              <span
-                class="rounded-full bg-neutral-100 px-3 py-1 text-xs font-semibold text-neutral-700"
-              >
-                {{ t }}
-              </span>
-            }
-          </div>
-          <div class="mt-6 flex gap-3">
-            <a
-              [href]="p.github"
-              target="_blank"
-              class="rounded-full border bg-emerald-800 border-emerald-800 px-4 py-2 text-sm font-semibold hover:bg-white hover:text-emerald-800"
-            >
-              GitHub
-            </a>
-            @if (p.demo) {
-              <a
-                [href]="p.demo"
-                target="_blank"
-                class="rounded-full bg-neutral-900 px-4 py-2 text-sm font-semibold text-white"
-              >
-                Live Demo
-              </a>
-            }
-          </div>
-          @if (p.featured) {
-            <div class="rounded-3xl border bg-white p-6 shadow-lg">
-              <img
-                [src]="p.image"
-                alt="{{ p.title }}"
-                class="mb-4 w-full rounded-xl object-cover"
-              />
+        <div revealOnScroll class="reveal-up">
+          <div
+            class="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm hover:shadow-xl transition duration-300 hover:shadow-emerald-200/20 hover:ring-1 hover:ring-emerald-100/40"
+          >
+            <h3 class="text-xl font-bold text-neutral-900">{{ p.title }}</h3>
+            <p class="mt-2 text-sm text-neutral-600">
+              {{ p.desc }}
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              @for (t of p.tech; track t) {
+                <span
+                  class="rounded-full bg-neutral-100 px-3 py-1 text-xs font-semibold text-neutral-700"
+                >
+                  {{ t }}
+                </span>
+              }
             </div>
-          }
+            <div class="mt-6 flex gap-3">
+              <a
+                [href]="p.github"
+                target="_blank"
+                class="rounded-full border bg-emerald-800 border-emerald-800 px-4 py-2 text-sm font-semibold hover:bg-white hover:text-emerald-800"
+              >
+                GitHub
+              </a>
+              @if (p.demo) {
+                <a
+                  [href]="p.demo"
+                  target="_blank"
+                  class="rounded-full bg-neutral-900 px-4 py-2 text-sm font-semibold text-white"
+                >
+                  Live Demo
+                </a>
+              }
+            </div>
+            @if (p.featured) {
+              <div class="rounded-3xl border bg-white p-6 shadow-lg">
+                <img
+                  [src]="p.image"
+                  alt="{{ p.title }}"
+                  class="mb-4 w-full rounded-xl object-cover"
+                />
+              </div>
+            }
+          </div>
         </div>
       }
     </div>
